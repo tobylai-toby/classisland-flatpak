@@ -1,6 +1,6 @@
 # classisland-flatpak
 
-**WARNING** 非ClassIsland官方Flatpak官方构建
+**WARNING** 非ClassIsland官方Flatpak构建
 
 ## 打包
 1. 安装依赖
