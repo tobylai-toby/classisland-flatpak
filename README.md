@@ -10,6 +10,7 @@ flatpak install org.freedesktop.Sdk/x86_64/24.08
 2. 构建/测试运行
 ```bash
 git clone https://github.com/tobylai-toby/classisland-flatpak.git
+cd classisland-flatpak
 flatpak-builder --force-clean build cn.classisland.app.yml --install --user --repo=repo
 flatpak run cn.classisland.app
 ```
