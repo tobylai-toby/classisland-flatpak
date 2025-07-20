@@ -2,6 +2,8 @@
 
 **WARNING** 非ClassIsland官方Flatpak构建
 
+**WARNING** 实验性质的，很可能无法用
+
 ## 打包
 1. 安装依赖
 ```bash
@@ -20,6 +22,7 @@ flatpak run cn.classisland.app
     - 还没有充分测试过
 - Q: 支持什么架构？
     - 应该支持x64和aarch64
+    - **alpine arm64没法运行，奇怪**
 - Q: 上传flathub了吗
     - 没
 - Q: extra-data怎么用的是镜像的Github
