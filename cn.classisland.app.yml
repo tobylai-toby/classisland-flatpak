@@ -54,6 +54,6 @@ modules:
       - type: extra-data
         only-arches: [aarch64]
         filename: ci.deb
-        url: https://ghproxy.net/https://github.com/ClassIsland/ClassIsland/releases/download/1.7.103.0/ClassIsland_app_linux_aarch64_selfContained_deb.deb
+        url: https://ghproxy.net/https://github.com/ClassIsland/ClassIsland/releases/download/1.7.103.0/ClassIsland_app_linux_arm64_selfContained_deb.deb
         sha256: cfc9ae088ebf58a74f7d92d5d499f58f2463a5dee07b69d1e99378619bad2dda
         size: 62051288
