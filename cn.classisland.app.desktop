@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Education;Office;
+Name=ClassIsland
+Keywords=deepin;
+Comment=dev_全功能、可定制、跨平台的大屏课表显示工具。
+Type=Application
+Terminal=false
+StartupNotify=true
+Exec=classisland
+Icon=cn.classisland.app

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>cn.classisland.app</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>ClassIsland</name>
+  <developer_name>ClassIsland</developer_name>
+  <url type="homepage">https://classisland.tech/</url>
+  <url type="help">https://docs.classisland.tech/</url>
+  <summary>一款适用于班级多媒体屏幕的课表信息显示工具，可以一目了然地显示各种信息。</summary>
+  <description>
+    <p>ClassIsland 是一款适用于班级多媒体屏幕的课表信息显示工具，可以在屏幕上显示各种信息。本应用的名字灵感源于 iOS 灵动岛（Dynamic Island）功能。</p>
+    <p>警告：这不是官方的Flatpak构建，如果遇到bug，很可能不是ClassIsland项目的问题。</p>
+  </description>
+  <launchable type="desktop-id">cn.classisland.app.desktop</launchable>
+  <releases>
+    <release version="1.7.103.0" date="2025-07-16">
+      <description></description>
+    </release>
+  </releases>
+</component>

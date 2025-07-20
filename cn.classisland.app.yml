@@ -1,0 +1,57 @@
+﻿app-id: cn.classisland.app 
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+command: classisland
+separate-locales: false
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=pulseaudio
+  - --share=network
+  - --device=all
+  - --socket=system-bus
+  - --filesystem=host
+  - --persist=.
+modules:
+  - name: classisland
+    buildsystem: simple
+    build-commands:
+    - install -Dm755 classisland.sh /app/bin/classisland
+    - install -Dm644 cn.classisland.app.svg /app/share/icons/hicolor/scalable/apps/cn.classisland.app.svg
+    - install -Dm644 cn.classisland.app.desktop -t /app/share/applications
+    - install -Dm644 cn.classisland.app.metainfo.xml -t /app/share/metainfo
+    - install -D apply_extra -t /app/bin
+    - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libX11.so -t /app/lib
+    - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libsframe.so* -t /app/lib/
+    - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t /app/lib/
+    - cp /usr/bin/ar /app/bin
+    sources:
+      - type: script
+        dest-filename: apply_extra
+        commands:
+          - ar x ci.deb
+          - tar xvf data.tar.xz
+          - mv ./opt/apps/cn.classisland.app/files/bin classisland 
+          - cp /app/lib/libX11.so classisland/libX11.so
+          - rm -r ci.deb debian-binary data.tar.xz control.tar.gz usr opt
+      - type: file
+        path: classisland.sh
+      - type: file
+        path: icons/cn.classisland.app.svg
+      - type: file
+        path: cn.classisland.app.desktop
+      - type: file
+        path: cn.classisland.app.metainfo.xml
+      - type: extra-data
+        only-arches: [x86_64]
+        filename: ci.deb
+        url: https://ghproxy.net/https://github.com/ClassIsland/ClassIsland/releases/download/1.7.103.0/ClassIsland_app_linux_x64_selfContained_deb.deb
+        sha256: 52f036c3e040a1ca956053cccb49efd3e9d271eba63d66b986a90c1d9ca352cc
+        size: 65635300
+      - type: extra-data
+        only-arches: [aarch64]
+        filename: ci.deb
+        url: https://ghproxy.net/https://github.com/ClassIsland/ClassIsland/releases/download/1.7.103.0/ClassIsland_app_linux_aarch64_selfContained_deb.deb
+        sha256: cfc9ae088ebf58a74f7d92d5d499f58f2463a5dee07b69d1e99378619bad2dda
+        size: 62051288
