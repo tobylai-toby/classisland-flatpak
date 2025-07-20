@@ -2,6 +2,7 @@
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
+sdk-version: '24.08'
 command: classisland
 separate-locales: false
 finish-args:
@@ -13,6 +14,7 @@ finish-args:
   - --socket=system-bus
   - --filesystem=host
   - --persist=.
+  - --env=LANG=zh_CN.UTF-8
 modules:
   - name: classisland
     buildsystem: simple
