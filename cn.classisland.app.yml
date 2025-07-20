@@ -2,7 +2,6 @@
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
-sdk-version: '24.08'
 command: classisland
 separate-locales: false
 finish-args:
@@ -15,9 +14,6 @@ finish-args:
   - --filesystem=host
   - --persist=.
   - --env=LANG=zh_CN.UTF-8
-sdk-extensions: 
-  - org.freedesktop.Sdk.Extension.libX11
-build-extension: true
 modules:
   - name: classisland
     buildsystem: simple
@@ -27,7 +23,7 @@ modules:
     - install -Dm644 cn.classisland.app.desktop -t /app/share/applications
     - install -Dm644 cn.classisland.app.metainfo.xml -t /app/share/metainfo
     - install -D apply_extra -t /app/bin
-    - install -Dm755 /usr/lib/libX11.so -t /app/lib
+    - install -Dm755 /usr/lib/libX11.so -t /app/lib || echo "libX11.so not found at /usr/lib/libX11.so, trying another"
     - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libX11.so -t /app/lib
     - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libsframe.so* -t /app/lib/
     - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t /app/lib/
